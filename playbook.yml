@@ -1,0 +1,15 @@
+- name: "Playing with Ansible and Git"
+  hosts: target
+  tasks:
+
+    - name: "just execute a df -h command"
+      shell: "file -s /dev/xvdf"
+    - name: "test"
+      shell : "mkfs -t ext4 /dev/xvdf"
+    - name: "test1"
+      shell: "mkdir /new"
+    - name: "test2"
+      shell: "mount /dev/xvdf /new/"
+    - name: "test3"
+      shell: "df -h"
+      register: "output"
